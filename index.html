@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebView Message Example</title>
+  <script>
+    function postMessageToNative() {
+   
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.native) {
+        window.webkit.messageHandlers.native.postMessage("CustomPE");
+      } else if (window.postMessage) {
+        window.postMessage("CustomPE", "*"); // Send message via postMessage
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="postMessageToNative()">Post Message</button>
+</body>
+</html>
