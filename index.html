@@ -7,11 +7,7 @@
   <script>
     function postMessageToNative() {
    
-      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.native) {
-        window.webkit.messageHandlers.native.postMessage("CustomPE");
-      } else if (window.postMessage) {
-        window.postMessage("CustomPE", "*"); // Send message via postMessage
-      }
+       window.chrome.webview.postMessage('snapshotsSelection');
     }
   </script>
 </head>
